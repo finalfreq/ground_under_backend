@@ -19,6 +19,7 @@ gem 'rack-cors', '~> 0.2.9', :require => 'rack/cors'
 gem 'counter_culture', '~> 0.1.29'
 
 
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
