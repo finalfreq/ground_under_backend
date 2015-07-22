@@ -6,10 +6,16 @@ gem 'rails', '4.2.3'
 gem 'rails-api'
 
 gem 'spring', :group => :development
+gem 'active_model_serializers', '~> 0.8.1'
 
 
 gem 'pg'
 
+
+
+gem 'rails_12factor', '~> 0.0.2'
+gem 'rack-cors', '~> 0.2.9', :require => 'rack/cors'
+gem 'counter_culture', '~> 0.1.29'
 
 
 # To use ActiveModel has_secure_password
