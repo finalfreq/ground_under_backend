@@ -9,3 +9,7 @@
 
   Artist.create(name:'john denver', description: 'country weedrock', money: '$250')
 end
+
+if !User.any?
+  User.create(email: 'test@test.com', password: 'password')
+end
