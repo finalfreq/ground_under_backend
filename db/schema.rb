@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722163757) do
+ActiveRecord::Schema.define(version: 20150722200849) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,6 +24,20 @@ ActiveRecord::Schema.define(version: 20150722163757) do
     t.datetime "updated_at",  null: false
   end
 
+  create_table "artists_songs", id: false, force: :cascade do |t|
+    t.integer "artist_id"
+    t.integer "song_id"
+  end
+
+  add_index "artists_songs", ["artist_id"], name: "index_artists_songs_on_artist_id", using: :btree
+  add_index "artists_songs", ["song_id"], name: "index_artists_songs_on_song_id", using: :btree
+
+  create_table "libraries", force: :cascade do |t|
+    t.integer "users_id"
+    t.integer "songs_id"
+    t.boolean "purchased", default: false
+  end
+
   create_table "songs", force: :cascade do |t|
     t.string   "name"
     t.string   "genre"
@@ -33,6 +47,11 @@ ActiveRecord::Schema.define(version: 20150722163757) do
     t.string   "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+  end
+
+  create_table "songs_users", id: false, force: :cascade do |t|
+    t.integer "song_id"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
