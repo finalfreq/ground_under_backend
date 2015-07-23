@@ -1,5 +1,6 @@
 class Api::ChargesController < ApplicationController
   before_action :set_charge, only: [:show, :update, :destroy]
+  skip_before_filter  :verify_authenticity_token
 
   # GET /charges
   # GET /charges.json
@@ -54,6 +55,6 @@ class Api::ChargesController < ApplicationController
     end
 
     def charge_params
-      params[:charge]
+      params.require(:charge).permit(:amount, :token)
     end
 end
