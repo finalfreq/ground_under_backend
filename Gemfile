@@ -20,6 +20,8 @@ gem 'counter_culture', '~> 0.1.29'
 
 gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 
+gem 'dotenv-rails'
+
 # To use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 

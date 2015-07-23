@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   devise_for :users, controllers: {sessions: 'sessions'}
   namespace :api do
+    resources :charges, except: [:new, :edit]
     resources :users, except: [:new, :edit]
     resources :artists, except: [:new, :edit]
     resources :songs, except: [:new, :edit]

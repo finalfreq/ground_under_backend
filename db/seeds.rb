@@ -7,7 +7,7 @@
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 10.times do
 
-  Song.create(name: 'Butt Rock', genre: 'Electro House', key: '7A', bpm: '130', description: 'Big drop', price: '5')
+  Song.create(name: 'Butt Rock', genre: 'Electro House', key: '7A', bpm: '130', description: 'Big drop', price: 5)
 end
 
 if !User.any?

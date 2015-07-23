@@ -11,10 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150722205408) do
+ActiveRecord::Schema.define(version: 20150723173535) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "charges", force: :cascade do |t|
+    t.string  "token"
+    t.integer "amount"
+  end
 
   create_table "libraries", force: :cascade do |t|
     t.integer "users_id"
@@ -31,9 +36,9 @@ ActiveRecord::Schema.define(version: 20150722205408) do
     t.string   "key"
     t.string   "bpm"
     t.string   "description"
-    t.string   "price"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
+    t.integer  "price"
   end
 
   create_table "users", force: :cascade do |t|
