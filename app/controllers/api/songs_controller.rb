@@ -19,7 +19,7 @@ class Api::SongsController < ApplicationController
   # POST /songs
   # POST /songs.json
   def create
-    binding.pry
+
     @song = Song.new(song_params)
 
     if @song.save
