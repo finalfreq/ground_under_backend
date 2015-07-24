@@ -23,6 +23,7 @@ gem 'stripe', :git => 'https://github.com/stripe/stripe-ruby'
 gem 'dotenv-rails'
 gem 'shoulda-matchers'
 gem 'rspec-rails'
+gem 'paperclip'
 
 
 # To use ActiveModel has_secure_password

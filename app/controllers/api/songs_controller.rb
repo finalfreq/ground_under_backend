@@ -19,6 +19,7 @@ class Api::SongsController < ApplicationController
   # POST /songs
   # POST /songs.json
   def create
+    binding.pry
     @song = Song.new(song_params)
 
     if @song.save
@@ -55,6 +56,6 @@ class Api::SongsController < ApplicationController
     end
 
     def song_params
-      params.require(:song).permit(:name, :genre, :key, :bpm, :description, :price)
+      params.require(:song).permit(:name, :genre, :key, :bpm, :description, :price, :track)
     end
 end
